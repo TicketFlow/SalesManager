@@ -11,12 +11,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class KartService {
 
+    private final SendMessageService rabbitMQSender;
+
     private final KartRepository kartRepository;
 
     @Qualifier("modelMapperConfig")
     private final ModelMapper modelMapper;
 
-    public KartService(KartRepository kartRepository, ModelMapper modelMapper) {
+    public KartService(SendMessageService rabbitMQSender, KartRepository kartRepository, ModelMapper modelMapper) {
+        this.rabbitMQSender = rabbitMQSender;
         this.kartRepository = kartRepository;
         this.modelMapper = modelMapper;
     }
@@ -27,7 +30,10 @@ public class KartService {
 
         Kart kartToSave = modelMapper.map(kartDTO, Kart.class);
         Kart kartSaved = kartRepository.save(kartToSave);
-        return modelMapper.map(kartSaved, KartDTO.class);
+        KartDTO kartDTOSaved = modelMapper.map(kartSaved, KartDTO.class);
+
+        rabbitMQSender.send(kartDTOSaved);
+        return kartDTOSaved;
     }
 
 }

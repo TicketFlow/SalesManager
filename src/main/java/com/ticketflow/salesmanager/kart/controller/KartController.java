@@ -20,7 +20,7 @@ public class KartController {
     }
 
     @PostMapping("/checkout")
-    public ResponseEntity<KartDTO> checkout(@RequestBody KartDTO kartDTO) {
+    public ResponseEntity<KartDTO> checkout(@RequestBody KartDTO kartDTO) throws Exception {
         KartDTO savedKartDTO = kartService.checkout(kartDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedKartDTO);
     }

@@ -1,12 +1,15 @@
 package com.ticketflow.salesmanager.kart.controller.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.ticketflow.salesmanager.kart.enums.Status;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Builder
@@ -22,8 +25,13 @@ public class KartDTO {
 
     private String couponId;
 
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime createdAt = LocalDateTime.now();
 
+
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime updatedAt = LocalDateTime.now();
 
     private Float totalPrice;

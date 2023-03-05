@@ -31,4 +31,5 @@ public class Kart {
     private LocalDateTime updatedAt = LocalDateTime.now();
 
     private Float totalPrice;
+
 }
