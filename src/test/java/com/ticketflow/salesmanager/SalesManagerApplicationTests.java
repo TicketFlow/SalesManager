@@ -1,10 +1,10 @@
-package com.ticketflow.reservationmanager;
+package com.ticketflow.salesmanager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ReservationManagerApplicationTests {
+class SalesManagerApplicationTests {
 
 	@Test
 	void contextLoads() {
