@@ -29,7 +29,7 @@ public class RabbitMQConfig {
     }
 
     @Bean
-    DirectExchange exchange() {
+    DirectExchange ticketFlowExchange() {
         return new DirectExchange(exchange);
     }
 
