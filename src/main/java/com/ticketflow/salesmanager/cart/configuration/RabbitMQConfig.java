@@ -1,4 +1,4 @@
-package com.ticketflow.salesmanager.kart.configuration;
+package com.ticketflow.salesmanager.cart.configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.core.Binding;

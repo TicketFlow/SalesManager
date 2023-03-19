@@ -1,11 +1,11 @@
-package com.ticketflow.salesmanager.kart.enums;
+package com.ticketflow.salesmanager.cart.enums;
 
 import lombok.Getter;
 
 @Getter
 public enum Status {
     CREATED("created"),
-    AWAITING_PAYMENT("awaiting_payment"),
+    AWAITING_PAYMENT("waiting_payment"),
     FINISHED("finished");
 
     private final String value;

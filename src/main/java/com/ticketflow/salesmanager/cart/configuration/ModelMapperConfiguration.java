@@ -1,4 +1,4 @@
-package com.ticketflow.salesmanager.kart.configuration;
+package com.ticketflow.salesmanager.cart.configuration;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
@@ -11,4 +11,5 @@ public class ModelMapperConfiguration {
     public ModelMapper modelMapper() {
         return new ModelMapper();
     }
+
 }
